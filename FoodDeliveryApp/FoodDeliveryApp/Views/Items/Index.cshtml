@@ -1,0 +1,32 @@
+﻿@model IEnumerable<FoodDeliveryApp.Models.Items>
+@{
+     
+    ViewData["Title"] = "items";
+   Layout = "~/Views/Shared/_MyLayout.cshtml";
+
+}
+@foreach (var item in Model){
+<div class="outer bg-light rounded-3 my-4" style="width:25%; display:inline-block; margin:6px">
+			<div class="content animated fadeInLeft">
+				<span class="bg animated fadeInDown "style="color:darkblue"> Discount 5% </span>
+				<p style="color:darkblue">@item.Name </p>
+				@*<p>@Model.</p>*@
+				
+				<div class="button">
+					<a href="#" class="btn" >@item.Price </a><a onclick="addToOrder(@item.Name)" class="cart-btn btn m-2"  >ADD TO CART</a>
+				</div>
+				
+			</div>
+		</div>
+		}
+		@section Scripts{
+		<script>
+         const items = [];
+         function  addToOrder(item)
+	     { 
+           items.push(item);
+		   localStorage.setItem("order",JSON.stringify(items))
+		 }
+
+		</script>
+		}
