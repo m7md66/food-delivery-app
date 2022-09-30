@@ -42,13 +42,12 @@ namespace FoodDeliveryApp.Controllers
             return View(_orderRepository.GetOrderList());
         }
 
-        [HttpPost]
-        [Route("[action]")]
-        public IActionResult Deliver(int OrderId)
-        {
+        
+        public IActionResult Deliver(int ID)
+          {
 
-            _orderRepository.IsDeliver(OrderId);
-            return View("index");
+            _orderRepository.IsDeliver(ID); 
+            return RedirectToAction ("index");
         }
     }
 }

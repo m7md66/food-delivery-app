@@ -58,6 +58,7 @@ namespace FoodDeliveryApp.Services
             if (!isDeliverd) {
                 var order = _foodAppContext.Orders.Where(a => a.Number == orderId).SingleOrDefault();
                 order.IsDelivered = true;
+                _foodAppContext.SaveChanges();
             }
         }
 

@@ -2026,11 +2026,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Desktop\\FoodDeliveryApp\\FoodDeliveryApp\\FoodDeliveryApp.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Desktop\\food delivery\\FoodDeliveryApp\\FoodDeliveryApp\\FoodDeliveryApp.csproj",
       "projectName": "FoodDeliveryApp",
-      "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\FoodDeliveryApp\\FoodDeliveryApp\\FoodDeliveryApp.csproj",
+      "projectPath": "C:\\Users\\USER\\OneDrive\\Desktop\\food delivery\\FoodDeliveryApp\\FoodDeliveryApp\\FoodDeliveryApp.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\OneDrive\\Desktop\\FoodDeliveryApp\\FoodDeliveryApp\\obj\\",
+      "outputPath": "C:\\Users\\USER\\OneDrive\\Desktop\\food delivery\\FoodDeliveryApp\\FoodDeliveryApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
