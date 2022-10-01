@@ -3,6 +3,7 @@ using FoodDeliveryApp.IServices;
 using FoodDeliveryApp.Models;
 using FoodDeliveryApp.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoodDeliveryApp.Services
 {
@@ -41,11 +42,18 @@ namespace FoodDeliveryApp.Services
                 Select(a=>new OrderList{OrderRefrence=a.Number,OrderTime=a.OrderDate,TotalPrice=a.TotalPrice,DeliveredState=a.IsDelivered,CustomerClass=a.User.UserClass,CustomerName=a.User.Name}).ToList();
             foreach (var order in orderLists) 
             {
+              
+
                 var indexes = _foodAppContext.OrderItems. Where(o => o.OrdersId == order.OrderRefrence).Select(o=>o.ItemId).ToList();
+                IList<Items> ls = new List<Items>();
                 foreach (var index in indexes) {
-                    order.items = _foodAppContext.Items.Where(a => a.Id == index).ToList();
-                    foreach (var item in order.items) { order.TotalPrice += item.Price; }
+                    Items s = _foodAppContext.Items.Where(a => a.Id == index).SingleOrDefault();
+                   
+                    ls.Add(s);
+                  
                 }
+                order.items = ls;
+                foreach (var item in order.items) { order.TotalPrice += item.Price; }
 
             }
            
